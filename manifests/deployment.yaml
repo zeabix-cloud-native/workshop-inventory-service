@@ -1,0 +1,48 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workshop-inventory-service
+  labels:
+    app: workshop-inventory-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: workshop-inventory-service
+  template:
+    metadata:
+      labels:
+        app: workshop-inventory-service
+    spec:
+      containers:
+      - name: workshop-inventory-service
+        image: lqbl0acr0shared.azurecr.io/workshop-inventory-service:6ba1330
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        env:
+          - name: PORT 
+            value: "8080"
+        volumeMounts:
+          - name: init-inventories-vol
+            mountPath: /app/sample.json
+            subPath: sample.json
+      volumes:
+        - name: init-inventories-vol
+          configMap:
+            name: init-inventories
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: workshop-inventory-service
+spec:
+  selector:
+    app: workshop-inventory-service
+  ports:
+  - name: rest-api
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
