@@ -1,0 +1,32 @@
+{
+    "inventories": [
+        {
+            "id": "8d3c59f8-371b-4753-8333-db714922203f",
+            "amount": 199
+        },
+        {
+            "id": "d7709304-c62c-4df5-ad6d-c1b9a9d75c6b",
+            "amount": 20
+        },
+        {
+            "id": "f57144dc-e89f-4021-ab90-659035ad6a53",
+            "amount": 34
+        },
+        {
+            "id": "e3bd7fd2-5d53-4639-8d70-d3b8c070db12",
+            "amount": 67
+        },
+        {
+            "id": "40e04340-498b-4312-af57-fe21dc2299cf",
+            "amount": 23
+        },
+        {
+            "id": "83c7a6d8-1398-4236-ab07-90a4821dface",
+            "amount": 12
+        },
+        {
+            "id": "c7925eb3-9bc0-4973-9fca-3143ceb7dd2b",
+            "amount": 293
+        }
+    ]
+}
